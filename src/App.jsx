@@ -5,6 +5,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Works from './components/Works';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
   body {
     font-family: Arial, sans-serif;
     background-color: white;
@@ -30,13 +30,6 @@ const MainContent = styled.main`
   flex: 1;
 `;
 
-const Footer = styled.footer`
-  background-color: #020B17;
-  color: white;
-  text-align: center;
-  padding: 20px;
-`;
-
 function App() {
   return (
     <>
@@ -49,9 +42,7 @@ function App() {
           <Works />
           <Contact />
         </MainContent>
-        <Footer>
-          © {new Date().getFullYear()} Your Name. All rights reserved.
-        </Footer>
+        <Footer />
       </AppWrapper>
     </>
   );

@@ -1,57 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import contactBg from '../assets/contact.svg';
 
 const ContactSection = styled.section`
-  background-color: #020B17;
-  padding: 50px 20px;
+  background-image: url(${contactBg});
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const ContentWrapper = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-const Title = styled.h2`
-  color: white;
-  font-size: 36px;
-  margin-bottom: 30px;
+const ContactContainer = styled.div`
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+const Title = styled.h2`
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
 `;
 
-const Input = styled.input`
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #0A1927;
-  color: white;
-  font-size: 16px;
+const Subtitle = styled.p`
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 30px;
 `;
 
-const TextArea = styled.textarea`
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #0A1927;
-  color: white;
-  font-size: 16px;
-  resize: vertical;
-  min-height: 150px;
-`;
-
-const SubmitButton = styled.button`
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
+const MailtoLink = styled.a`
+  display: inline-block;
   background-color: #FF4A57;
   color: white;
-  font-size: 18px;
-  cursor: pointer;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -60,59 +51,19 @@ const SubmitButton = styled.button`
 `;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
-  };
+  const email = "k.uyttenbroeck@gmail.com";
+  const subject = encodeURIComponent("Contact from Portfolio");
+  const body = encodeURIComponent("Dear [Your Name],\n\nI'd like to get in touch with you regarding...");
 
   return (
     <ContactSection id="contact">
-      <ContentWrapper>
-        <Title>Drop me a line</Title>
-        <Form onSubmit={handleSubmit}>
-          <Input 
-            type="text" 
-            name="name" 
-            placeholder="Your Name" 
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <Input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <TextArea 
-            name="message" 
-            placeholder="Your Message" 
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <SubmitButton type="submit">Send Message</SubmitButton>
-        </Form>
-      </ContentWrapper>
+      <ContactContainer>
+        <Title>Get in Touch</Title>
+        <Subtitle>Drop me a line. I would like to hear from you.</Subtitle>
+        <MailtoLink href={`mailto:${email}?subject=${subject}&body=${body}`}>
+          Send me an email
+        </MailtoLink>
+      </ContactContainer>
     </ContactSection>
   );
 };
