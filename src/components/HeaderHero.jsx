@@ -10,9 +10,9 @@ const HeaderHeroWrapper = styled.div`
   background-size: cover;
   background-position: right center;
   width: 100%;
-  min-width: 1050px;
-  max-width: 1340px;
-  height: 100vh;
+  min-width: 1535px;
+  max-width: 2000px;
+  height: 125vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -53,9 +53,9 @@ const Nav = styled.nav`
   display: flex;
   gap: 4rem;
 
-  @media (max-width: 1111px) {
+@media (max-width: 540px) {
   gap: 2rem;
-  }
+  } 
 
   @media (max-width: 410px) {
   gap: 1rem;
