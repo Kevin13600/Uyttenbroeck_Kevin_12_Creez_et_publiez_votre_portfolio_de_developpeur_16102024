@@ -1,0 +1,57 @@
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Works from './components/Works';
+import Contact from './components/Contact';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #020B17;
+  }
+`;
+
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.main`
+  flex: 1;
+`;
+
+const Footer = styled.footer`
+  background-color: #0A1927;
+  color: white;
+  text-align: center;
+  padding: 20px;
+`;
+
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <AppWrapper>
+        <Header />
+        <MainContent>
+          <Hero />
+          <About />
+          <Skills />
+          <Works />
+          <Contact />
+        </MainContent>
+        <Footer>
+          © {new Date().getFullYear()} Your Name. All rights reserved.
+        </Footer>
+      </AppWrapper>
+    </>
+  );
+}
+
+export default App;
