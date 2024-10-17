@@ -28,6 +28,9 @@ const BackgroundImage = styled.div`
   z-index: 1;
   max-width: 1370px;
   min-width: 1370px;
+   @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -46,7 +49,7 @@ const ContentWrapper = styled.div`
     min-width: 100%;
     padding: 25vh 2rem 0;
   }
-  @media (max-width: 675px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 3rem;
   }
@@ -59,10 +62,10 @@ const ImageContainer = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  transform: ${props => props.isSmallScreen ? props.transform : 'rotate(-10deg)'};
+  transform: ${props => props.isSmallScreen ? props.transform : 'rotate(-5deg)'};
   transition: transform 0.3s ease;
   
-  @media (min-width: 676px) {
+  @media (min-width: 768px) {
     &:hover {
       transform: rotate(-25deg);
     }
@@ -75,8 +78,11 @@ const ProfileImage = styled.img`
   height: auto;
   border-radius: 10px;
   display: block;
-  @media (max-width: 675px) {
-    max-width: 335px;
+  @media (max-width: 1200px) {
+    width: 300px;
+  }
+  @media (max-width: 768px) {
+    max-width: 250px;
     margin-top: -1rem;
   }
 `;
@@ -84,8 +90,8 @@ const ProfileImage = styled.img`
 const TextContainer = styled.div`
   flex: 1;
   color: white;
-  @media (max-width: 675px) {
-    text-align: end;
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `;
 
@@ -100,12 +106,6 @@ const Description = styled.p`
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #000;
-  @media (max-width: 675px) {
-    margin-bottom: 1rem;
-    color: #FF4A57;
-    font-weight: bold;
-    font-size: 20px;
-  }
 `;
 
 const DownloadButton = styled.a`
@@ -139,11 +139,11 @@ const About = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 675);
+      setIsSmallScreen(window.innerWidth <= 768);
     };
 
     const handleScroll = () => {
-      if (window.innerWidth <= 675) {
+      if (window.innerWidth <= 768) {
         const scrollPosition = window.scrollY;
         const imagePosition = imageRef.current.getBoundingClientRect().top + window.scrollY;
         const windowHeight = window.innerHeight;

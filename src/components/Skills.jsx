@@ -1,75 +1,161 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import skillsImage from '../assets/skills-image.webp';
+import skillsSvg from '../assets/skills.svg';
+
+const colors = {
+  primary: '#FF4A57',
+  text: '#333',
+  background: '#fff',
+};
 
 const SkillsSection = styled.section`
-  background-color: #020B17;
-  padding: 50px 20px;
+  background-color: ${colors.background};
+  padding: 80px 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 25vh 2rem 0;
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
+  flex: 1;
+  max-width: 50%;
+
+  @media (max-width: 1200px) {
+    text-align: center;
+    max-width: 100%;
+  }
 `;
 
 const Title = styled.h2`
-  color: white;
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: ${colors.primary};
+  margin-bottom: 4rem;
 `;
 
-const SkillsGrid = styled.div`
+const Description = styled.p`
+  font-size: 1rem;
+  color: ${colors.text};
+  margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+`;
+
+const SkillsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 `;
 
 const SkillItem = styled.div`
   text-align: center;
 `;
 
-const SkillCircle = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 5px solid #FF4A57;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: white;
+const SkillIcon = styled(FontAwesomeIcon)`
+  font-size: 3rem;
+  color: #000C24;
+  margin-bottom: 10px;
 `;
 
 const SkillName = styled.p`
-  color: white;
-  font-size: 16px;
+  font-size: 0.9rem;
+  color: ${colors.text};
 `;
 
-const Skills = () => {
-  const skillsData = [
-    { name: 'HTML', level: '90%' },
-    { name: 'CSS', level: '85%' },
-    { name: 'JavaScript', level: '80%' },
-    { name: 'React', level: '75%' },
-    { name: 'Node.js', level: '70%' },
-    { name: 'Python', level: '65%' },
-  ];
+const ImageWrapper = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-  return (
-    <SkillsSection id="skills">
+const SkillsImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 1200px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 70%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 60%;
+  }
+`;
+
+const SkillsSvgBackground = styled.div`
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 115%;
+  background: url(${skillsSvg}) no-repeat right center/contain;
+  z-index: 1;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const skills = [
+  { name: 'HTML', icon: faHtml5 },
+  { name: 'CSS', icon: faCss3Alt },
+  { name: 'JavaScript', icon: faJs },
+  { name: 'React', icon: faReact },
+  { name: 'Node.js', icon: faNodeJs },
+];
+
+const Skills = () => (
+  <SkillsSection id="skills">
+    <Container>
       <ContentWrapper>
         <Title>Skills</Title>
-        <SkillsGrid>
-          {skillsData.map((skill, index) => (
+        <Description>
+          I enjoy creating things that live on the internet,
+          whether that be websites, applications, or
+          anything in between.
+        </Description>
+        <SkillsWrapper>
+          {skills.map((skill, index) => (
             <SkillItem key={index}>
-              <SkillCircle>{skill.level}</SkillCircle>
+              <SkillIcon icon={skill.icon} />
               <SkillName>{skill.name}</SkillName>
             </SkillItem>
           ))}
-        </SkillsGrid>
+        </SkillsWrapper>
       </ContentWrapper>
-    </SkillsSection>
-  );
-};
+      <ImageWrapper>
+        <SkillsImage src={skillsImage} alt="Skills illustration" />
+      </ImageWrapper>
+    </Container>
+    <SkillsSvgBackground />
+  </SkillsSection>
+);
 
 export default Skills;
