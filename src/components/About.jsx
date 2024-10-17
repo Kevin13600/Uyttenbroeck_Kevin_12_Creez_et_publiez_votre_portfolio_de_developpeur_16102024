@@ -16,7 +16,7 @@ const AboutSection = styled.section`
 
 const BackgroundImage = styled.div`
   position: absolute;
-  top: -58vh; 
+  top: -327vh; 
   left: 0;
   right: 0;
   bottom: 0;
@@ -24,11 +24,11 @@ const BackgroundImage = styled.div`
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
-  transform: skew(0deg, -12deg);
+  transform: skew(0deg, -8deg);
   z-index: 1;
   max-width: 1370px;
   min-width: 1370px;
-   @media (max-width: 768px) {
+   @media (max-width: 1000px) {
     display: none;
   }
 `;
@@ -50,6 +50,7 @@ const ContentWrapper = styled.div`
     padding: 25vh 2rem 0;
   }
   @media (max-width: 768px) {
+    margin-top: 5rem;
     flex-direction: column;
     gap: 3rem;
   }
@@ -107,13 +108,13 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #FF4A57;
 `;
 
 const Description = styled.p`
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #000;

@@ -31,7 +31,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
-    gap: 2rem;
+    gap: 1rem;
   }
 `;
 
@@ -46,13 +46,13 @@ const ContentWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: ${colors.primary};
   margin-bottom: 4rem;
 `;
 
 const Description = styled.p`
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: ${colors.text};
   margin-bottom: 4rem;
 

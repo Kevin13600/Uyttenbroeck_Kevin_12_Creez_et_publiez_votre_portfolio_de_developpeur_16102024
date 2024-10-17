@@ -25,13 +25,13 @@ const ContactContainer = styled.div`
 
 const Title = styled.h2`
   color: #FF4A57;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 `;
 
 const Subtitle = styled.p`
   color: #666;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
 `;
 

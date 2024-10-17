@@ -9,11 +9,19 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     font-family: 'Open Sans', sans-serif;
   }
@@ -27,10 +35,14 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 `;
 
 const MainContent = styled.main`
   flex: 1;
+  width: 100%;
 `;
 
 const Section = styled(Element)`
@@ -38,10 +50,11 @@ const Section = styled(Element)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 `;
 
 const FooterSection = styled(Section)`
-  min-height: auto; // Le footer n'a pas besoin d'être de hauteur 100vh
+  min-height: auto;
 `;
 
 class App extends React.Component {
@@ -82,14 +95,26 @@ class App extends React.Component {
       <>
         <GlobalStyle />
         <AppWrapper>
-          <Section name="header" id="header"><HeaderHero /></Section>
+          <Section name="header" id="header">
+            <HeaderHero />
+          </Section>
           <MainContent>
-            <Section name="about" id="about"><About /></Section>
-            <Section name="skills" id="skills"><Skills /></Section>
-            <Section name="works" id="works"><Works /></Section>
-            <Section name="contact" id="contact"><Contact /></Section>
+            <Section name="about" id="about">
+              <About />
+            </Section>
+            <Section name="skills" id="skills">
+              <Skills />
+            </Section>
+            <Section name="works" id="works">
+              <Works />
+            </Section>
+            <Section name="contact" id="contact">
+              <Contact />
+            </Section>
           </MainContent>
-          <FooterSection name="footer" id="footer"><Footer /></FooterSection>
+          <FooterSection name="footer" id="footer">
+            <Footer />
+          </FooterSection>
         </AppWrapper>
       </>
     );
