@@ -24,20 +24,20 @@ const ContactContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  color: #333;
-  font-size: 2rem;
+  color: #FF4A57;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 `;
 
 const Subtitle = styled.p`
   color: #666;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-bottom: 30px;
 `;
 
 const MailtoLink = styled.a`
   display: inline-block;
-  background-color: #FF4A57;
+  background-color: #333;
   color: white;
   text-decoration: none;
   padding: 10px 20px;
@@ -52,16 +52,16 @@ const MailtoLink = styled.a`
 
 const Contact = () => {
   const email = "k.uyttenbroeck@gmail.com";
-  const subject = encodeURIComponent("Contact from Portfolio");
-  const body = encodeURIComponent("Dear [Your Name],\n\nI'd like to get in touch with you regarding...");
+  const subject = encodeURIComponent("Contact depuis le Portfolio");
+  const body = encodeURIComponent("Bonjour [Votre Nom],\n\nJ'aimerais prendre contact avec vous concernant...");
 
   return (
     <ContactSection id="contact">
       <ContactContainer>
-        <Title>Get in Touch</Title>
-        <Subtitle>Drop me a line. I would like to hear from you.</Subtitle>
+        <Title>Contactez-moi</Title>
+        <Subtitle>Envoyez-moi un message. J'aimerais avoir de vos nouvelles.</Subtitle>
         <MailtoLink href={`mailto:${email}?subject=${subject}&body=${body}`}>
-          Send me an email
+          M'envoyer un email
         </MailtoLink>
       </ContactContainer>
     </ContactSection>

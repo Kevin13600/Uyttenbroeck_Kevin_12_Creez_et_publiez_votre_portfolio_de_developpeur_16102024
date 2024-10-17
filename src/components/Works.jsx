@@ -118,9 +118,15 @@ const ProjectCard = styled.div`
   display: flex;
   background-color: white;
   border-radius: 10px;
+  border: 1px solid black;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   height: 400px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
 
   @media (max-width: 992px) {
     height: auto;
@@ -157,7 +163,7 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #333;
   margin-bottom: 10px;
 
@@ -167,7 +173,7 @@ const ProjectTitle = styled.h3`
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #666;
   margin-bottom: 15px;
 
@@ -192,7 +198,7 @@ const TechTag = styled.span`
   color: #333;
   padding: 5px 10px;
   border-radius: 15px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 
   @media (max-width: 576px) {
     font-size: 0.7rem;
@@ -220,58 +226,58 @@ const GithubLink = styled.a`
 const projects = [
     {
       title: "Ohmyfood",
-      description: "A mobile-first restaurant booking app with CSS animations.",
+      description: "Une application mobile-first de réservation de restaurants avec des animations CSS.",
       image: ohmyfoodImg,
       techStack: ["HTML", "CSS", "Sass"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_4_Ameliorez_l_interface_d-un_site_mobile_avec_des_animations_CSS_10042024"
     },
     {
       title: "Print It",
-      description: "A web application for a printing company with interactive features.",
+      description: "Une application web pour une entreprise d'impression avec des fonctionnalités interactives.",
       image: printItImg,
       techStack: ["HTML", "CSS", "JavaScript"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_5_Premiers_pas_sur_le_langage_javaScript_23052024"
     },
     {
       title: "Kasa",
-      description: "A modern real estate rental platform built with React.",
+      description: "Une plateforme moderne de location immobilière construite avec React.",
       image: kasaImg,
       techStack: ["React", "CSS", "React Router"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_7_Creez_une_application_web_de_location_immobiliere_avec_React_16072024"
     },
     {
-      title: "Nina Carducci Portfolio",
-      description: "A photographer's portfolio website with image optimization.",
+      title: "Portfolio Nina Carducci",
+      description: "Site web portfolio d'un photographe avec optimisation des images.",
       image: ninaCarducciImg,
       techStack: ["HTML", "CSS", "JavaScript", "SEO"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_8_Optimisez_le_referencement_d_un_site_de_photographe_01082024"
     },
     {
-      title: "Sophie Bluel Portfolio",
-      description: "An architect's portfolio with dynamic content management.",
+      title: "Portfolio Sophie Bluel",
+      description: "Portfolio d'architecte avec gestion dynamique du contenu.",
       image: sophieImg,
-      techStack: ["HTML", "CSS", "JavaScript", "API Integration"],
+      techStack: ["HTML", "CSS", "JavaScript", "Intégration API"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_6_Creez_une_-page_web_dynamique_avec_JavaScript_30052024"
     },
     {
       title: "724 Events",
-      description: "An event planning website with interactive features.",
+      description: "Site web de planification d'événements avec fonctionnalités interactives.",
       image: eventsImg,
-      techStack: ["React", "CSS", "Debugging"],
+      techStack: ["React", "CSS", "Débogage"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_9_Debuggez_le_site_d_une_agence_d_evenementiel_22082024"
     },
     {
       title: "Argent Bank",
-      description: "A banking application with user authentication and account management.",
+      description: "Application bancaire avec authentification utilisateur et gestion de compte.",
       image: argentBankImg,
       techStack: ["React", "Redux", "Node.js", "MongoDB"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_10_Implementez_le_front_end_d_une_application_bancaire_avec_React_13092024"
     },
     {
       title: "Booki",
-      description: "A travel booking website with responsive design.",
+      description: "Site web de réservation de voyages avec design responsive.",
       image: bookiImg,
-      techStack: ["HTML", "CSS", "Responsive Design"],
+      techStack: ["HTML", "CSS", "Design Responsive"],
       githubLink: "https://github.com/Kevin13600/Uyttenbroeck_Kevin_3_Creez_la_page_d_accueil_d_une_agence_de_voyage_avec_HTML_CSS_220224"
     }
   ];
@@ -293,7 +299,7 @@ const projects = [
         <WorksSection id="works">
           <BackgroundSvg />
           <Container>
-            <Title>Works</Title>
+            <Title>Projets</Title>
             <CarouselWrapper>
               <Slider {...settings}>
                 {projects.map((project, index) => (
@@ -309,7 +315,7 @@ const projects = [
                           ))}
                         </TechStack>
                         <GithubLink href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                          <FontAwesomeIcon icon={faGithub} /> View on GitHub
+                          <FontAwesomeIcon icon={faGithub} /> Voir sur GitHub
                         </GithubLink>
                       </ProjectContent>
                     </ProjectCard>

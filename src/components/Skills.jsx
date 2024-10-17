@@ -26,6 +26,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   height: 100%;
 
   @media (max-width: 768px) {
@@ -51,7 +52,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 1rem;
+  font-size: 2rem;
   color: ${colors.text};
   margin-bottom: 4rem;
 
@@ -71,7 +72,7 @@ const SkillItem = styled.div`
 `;
 
 const SkillIcon = styled(FontAwesomeIcon)`
-  font-size: 3rem;
+  font-size: 4rem;
   color: #000C24;
   margin-bottom: 10px;
 `;
@@ -132,30 +133,30 @@ const skills = [
 ];
 
 const Skills = () => (
-  <SkillsSection id="skills">
-    <Container>
-      <ContentWrapper>
-        <Title>Skills</Title>
-        <Description>
-          I enjoy creating things that live on the internet,
-          whether that be websites, applications, or
-          anything in between.
-        </Description>
-        <SkillsWrapper>
-          {skills.map((skill, index) => (
-            <SkillItem key={index}>
-              <SkillIcon icon={skill.icon} />
-              <SkillName>{skill.name}</SkillName>
-            </SkillItem>
-          ))}
-        </SkillsWrapper>
-      </ContentWrapper>
-      <ImageWrapper>
-        <SkillsImage src={skillsImage} alt="Skills illustration" />
-      </ImageWrapper>
-    </Container>
-    <SkillsSvgBackground />
-  </SkillsSection>
-);
-
-export default Skills;
+    <SkillsSection id="skills">
+      <Container>
+        <ContentWrapper>
+          <Title>Compétences</Title>
+          <Description>
+            J'aime créer des choses qui vivent sur internet,
+            que ce soit des sites web, des applications, ou
+            tout ce qui se trouve entre les deux.
+          </Description>
+          <SkillsWrapper>
+            {skills.map((skill, index) => (
+              <SkillItem key={index}>
+                <SkillIcon icon={skill.icon} />
+                <SkillName>{skill.name}</SkillName>
+              </SkillItem>
+            ))}
+          </SkillsWrapper>
+        </ContentWrapper>
+        <ImageWrapper>
+          <SkillsImage src={skillsImage} alt="Illustration des compétences" />
+        </ImageWrapper>
+      </Container>
+      <SkillsSvgBackground />
+    </SkillsSection>
+  );
+  
+  export default Skills;

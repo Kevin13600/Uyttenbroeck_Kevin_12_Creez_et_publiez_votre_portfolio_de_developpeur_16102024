@@ -58,10 +58,17 @@ const ContentWrapper = styled.div`
 const ImageContainer = styled.div`
   flex: 1;
   padding-right: 2rem;
-  perspective: 1000px; 
+  perspective: 1000px;
 `;
 
 const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  box-shadow: 0 0 0 10px #e0e0e0, 0 0 0 11px #d0d0d0;
   transform: ${props => props.isSmallScreen ? props.transform : 'rotate(-5deg)'};
   transition: transform 0.3s ease;
   
@@ -70,21 +77,25 @@ const ImageWrapper = styled.div`
       transform: rotate(-25deg);
     }
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+  }
 `;
 
 const ProfileImage = styled.img`
   width: 100%;
-  max-width: 350px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   display: block;
-  @media (max-width: 1200px) {
-    width: 300px;
-  }
-  @media (max-width: 768px) {
-    max-width: 250px;
-    margin-top: -1rem;
-  }
 `;
 
 const TextContainer = styled.div`
@@ -102,7 +113,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #000;
@@ -169,21 +180,21 @@ const About = () => {
       <ContentWrapper>
         <ImageContainer>
           <ImageWrapper isSmallScreen={isSmallScreen} transform={transform} ref={imageRef}>
-            <ProfileImage src={aboutProfil} alt="Profile" />
+            <ProfileImage src={aboutProfil} alt="Profil" />
           </ImageWrapper>
         </ImageContainer>
         <TextContainer>
-          <Title>About Me</Title>
+          <Title>À propos de moi</Title>
           <Description>
-            An inquisitive Computer Science Engineering student, skilled in leadership, seeking to
-            leverage solid development skills with focus on collaboration, communication and passion.
+            Étudiant en fin de parcours chez OpenClassRooms, je cherche à mettre à profit mes compétences en développement en mettant l'accent sur la collaboration,
+            la communication et l'accomplissement.
           </Description>
-          <DownloadButton href="/path-to-your-cv.pdf" download>
-            Download CV
+          <DownloadButton href="/chemin-vers-votre-cv.pdf" download>
+            Télécharger CV
           </DownloadButton>
         </TextContainer>
       </ContentWrapper>
-      <ScrollIndicator>Scroll</ScrollIndicator>
+      <ScrollIndicator>Défiler</ScrollIndicator>
     </AboutSection>
   );
 };

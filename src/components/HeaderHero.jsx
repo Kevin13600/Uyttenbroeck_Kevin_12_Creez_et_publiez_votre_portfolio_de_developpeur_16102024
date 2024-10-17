@@ -23,7 +23,7 @@ const VectorBackground = styled.div`
   position: absolute;
   top: 6px;
   left: 53px;
-  width: 190px;
+  width: 222px;
   height: 200px;
   background-image: url(${vectorImage});
   background-size: contain;
@@ -117,16 +117,16 @@ const HeaderHero = () => {
         <VectorBackground />
         <HeaderWrapper>
           <Nav>
-            <HomeLink>Home</HomeLink>  
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#skills">Skills</NavLink>
-            <NavLink href="#works">Works</NavLink>
+            <HomeLink>Accueil</HomeLink>  
+            <NavLink href="#about">À propos</NavLink>
+            <NavLink href="#skills">Compétences</NavLink>
+            <NavLink href="#works">Projets</NavLink>
             <NavLink href="#contact">Contact</NavLink>
           </Nav>
       </HeaderWrapper>
       <HeroContent>
         <HeroTitle>Kevin</HeroTitle>
-        <HeroSubtitle>Front-end Developer</HeroSubtitle>
+        <HeroSubtitle>Développeur Intégrateur Web</HeroSubtitle>
         <SocialIcons>
           <SocialIcon href="https://github.com/Kevin13600" aria-label="Twitter">
             <FontAwesomeIcon icon={faTwitter} />
