@@ -10,8 +10,8 @@ const HeaderHeroWrapper = styled.div`
   background-size: cover;
   background-position: right center;
   width: 100%;
-  min-width: 1535px;
-  max-width: 2000px;
+  min-width: 1825px;
+  max-width: 1825px;
   height: 125vh;
   display: flex;
   flex-direction: column;
@@ -21,10 +21,10 @@ const HeaderHeroWrapper = styled.div`
 
 const VectorBackground = styled.div`
   position: absolute;
-  top: 6px;
-  left: 53px;
-  width: 222px;
-  height: 200px;
+  top: 3px;
+  left: 45px;
+  width: 300px;
+  height: 250px;
   background-image: url(${vectorImage});
   background-size: contain;
   background-repeat: no-repeat;
@@ -32,6 +32,8 @@ const VectorBackground = styled.div`
   z-index: 1;
 
   @media (max-width: 1111px) {
+  width: 200px;
+  height: 150px;
   top : -36px;
   left: -40px;
   }
@@ -51,23 +53,30 @@ const HeaderWrapper = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 4rem;
+  gap: 6rem;
 
-@media (max-width: 540px) {
-  gap: 2rem;
+@media (max-width: 865px) {
+  gap: 4rem;
   } 
 
-  @media (max-width: 410px) {
-  gap: 1rem;
+  @media (max-width: 740px) {
+  gap: 2rem;
   }
   `;
 
 const NavLink = styled.a`
   color: white;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   &:hover {
     color: #FF4A57;
+  }
+@media (max-width: 1000px) {
+    font-size: 1.2rem;
+  }
+@media (max-width: 740px) {
+  font-size: 1rem;
   }
 `;
 
@@ -75,7 +84,6 @@ const HomeLink = styled(NavLink)`
   color: #FF4A57;
   position: relative;
   z-index: 1000;
-  font-weight: bold;
 `;
 
 const HeroContent = styled.div`

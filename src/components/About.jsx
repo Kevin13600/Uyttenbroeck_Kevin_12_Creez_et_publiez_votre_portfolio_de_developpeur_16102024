@@ -12,25 +12,26 @@ const AboutSection = styled.section`
   overflow: hidden;
   margin-top: -49vh;
   z-index: 2;
+  @media (max-width: 800px) {
+    height: 110vh;
+  }
 `;
 
 const BackgroundImage = styled.div`
-  position: absolute;
-  top: -327vh; 
-  left: 0;
+  position: absolute; // Changé de relative à absolute
+  top: 0;
+  left: -639px;
   right: 0;
   bottom: 0;
   background-image: url(${aboutBackground});
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
-  transform: skew(0deg, -8deg);
+  transform: rotate(22deg);
   z-index: 1;
-  max-width: 1370px;
-  min-width: 1370px;
-   @media (max-width: 1000px) {
-    display: none;
-  }
+  width: 1385px;  
+  height: 125vh; 
+  overflow: hidden; 
 `;
 
 const ContentWrapper = styled.div`
@@ -52,7 +53,7 @@ const ContentWrapper = styled.div`
   @media (max-width: 768px) {
     margin-top: 5rem;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 `;
 
@@ -65,7 +66,7 @@ const ImageContainer = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 30px;
@@ -102,6 +103,11 @@ const ProfileImage = styled.img`
 const TextContainer = styled.div`
   flex: 1;
   color: white;
+  position: relative;
+  backdrop-filter: blur(30px);
+  padding: 20px;
+
+
   @media (max-width: 768px) {
     text-align: center;
   }
@@ -118,6 +124,9 @@ const Description = styled.p`
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #000;
+  @media (max-width: 767px) {
+  font-size: 1rem;
+  }
 `;
 
 const DownloadButton = styled.a`
@@ -167,7 +176,7 @@ const About = () => {
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-    handleResize(); // Initial check
+    handleResize(); 
 
     return () => {
       window.removeEventListener('resize', handleResize);
