@@ -1,8 +1,61 @@
-# React + Vite
+# Portfolio React de [Votre Nom]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-Currently, two official plugins are available:
+Ce portfolio présente mes compétences en développement web et mes projets récents. Il a été construit avec React et Styled Components, mettant en valeur mes capacités en développement front-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+(image.png)
+
+## 🚀 Fonctionnalités
+
+- Design responsive et moderne
+- Navigation fluide entre les sections avec défilement par section
+- Présentation détaillée des projets avec carrousel interactif
+- Formulaire de contact fonctionnel
+- Animation et transitions fluides
+
+## 🛠️ Technologies Utilisées
+
+- React.js
+- Styled Components pour le styling
+- React Scroll pour la navigation fluide
+- React Slick pour le carrousel de projets
+- Font Awesome pour les icônes
+
+## 📦 Installation et Utilisation
+
+1. Clonez ce dépôt
+   ```
+   git clone https://github.com/Kevin13600/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024.git
+   ```
+2. Naviguez dans le dossier du projet
+   ```
+   cd portfolio-react
+   ```
+3. Installez les dépendances
+   ```
+   npm install
+   ```
+4. Lancez l'application en mode développement
+   ```
+   npm run dev
+   ```
+
+L'application sera accessible à l'adresse http://localhost:5173/
+
+## 🌐 Déploiement
+
+Ce portfolio est déployé sur Netlify. Vous pouvez le voir en ligne à l'adresse : [URL de votre portfolio]
+
+## 🤝 Contribution
+
+Les contributions, problèmes et demandes de fonctionnalités sont les bienvenus. N'hésitez pas à consulter la page des problèmes si vous souhaitez contribuer.
+
+
+
+## 📞 Contact
+
+[Kevin Uyttenbroeck] - https://www.linkedin.com/in/kevin-uyttenbroeck-640934107/ - k.uyttenbroeck@gmailcom
+
+Lien du projet: [https://github.com/Kevin13600/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024]

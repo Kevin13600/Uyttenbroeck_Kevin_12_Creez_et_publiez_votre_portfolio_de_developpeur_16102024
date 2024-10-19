@@ -12,9 +12,6 @@ const AboutSection = styled.section`
   overflow: hidden;
   margin-top: -49vh;
   z-index: 2;
-  @media (max-width: 800px) {
-    height: 110vh;
-  }
 `;
 
 const BackgroundImage = styled.div`
