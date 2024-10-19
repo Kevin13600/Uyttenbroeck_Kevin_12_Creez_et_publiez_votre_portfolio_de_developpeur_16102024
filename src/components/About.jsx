@@ -196,7 +196,7 @@ const About = () => {
             Étudiant en fin de parcours chez OpenClassRooms, je cherche à mettre à profit mes compétences en développement en mettant l'accent sur la collaboration,
             la communication et l'accomplissement.
           </Description>
-          <DownloadButton href="/chemin-vers-votre-cv.pdf" download>
+          <DownloadButton href="#" download>
             Télécharger CV
           </DownloadButton>
         </TextContainer>
