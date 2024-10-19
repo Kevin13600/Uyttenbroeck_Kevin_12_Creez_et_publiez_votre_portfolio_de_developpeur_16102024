@@ -1,4 +1,4 @@
-# Portfolio React de [Votre Nom]
+# Portfolio React de kevin Uyttenbroeck
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
@@ -56,6 +56,6 @@ Les contributions, problèmes et demandes de fonctionnalités sont les bienvenus
 
 ## 📞 Contact
 
-[Kevin Uyttenbroeck] - https://www.linkedin.com/in/kevin-uyttenbroeck-640934107/ - k.uyttenbroeck@gmailcom
+[Kevin Uyttenbroeck] - https://www.linkedin.com/in/kevin-uyttenbroeck-640934107/ - k.uyttenbroeck@gmail.com
 
 Lien du projet: [https://github.com/Kevin13600/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024]
