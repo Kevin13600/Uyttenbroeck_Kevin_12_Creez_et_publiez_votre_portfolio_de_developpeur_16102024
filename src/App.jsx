@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Element, Events, animateScroll as scroll, scroller } from 'react-scroll';
 import HeaderHero from './components/HeaderHero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -45,7 +44,7 @@ const MainContent = styled.main`
   width: 100%;
 `;
 
-const Section = styled(Element)`
+const Section = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,61 +57,29 @@ const FooterSection = styled(Section)`
 `;
 
 class App extends React.Component {
-  componentDidMount() {
-    Events.scrollEvent.register('begin', function() {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register('end', function() {
-      console.log("end", arguments);
-    });
-
-    window.addEventListener('wheel', this.handleWheel, { passive: false });
-  }
-
-  componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
-    window.removeEventListener('wheel', this.handleWheel);
-  }
-
-  handleWheel = (e) => {
-    e.preventDefault();
-    const direction = e.deltaY > 0 ? 1 : -1;
-    const sections = ['header', 'about', 'skills', 'works', 'contact', 'footer'];
-    const currentIndex = sections.findIndex(section => 
-      document.getElementById(section).getBoundingClientRect().top >= 0
-    );
-    const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
-    scroller.scrollTo(sections[nextIndex], {
-      duration: 800,
-      smooth: 'easeInOutQuart'
-    });
-  }
-
   render() {
     return (
       <>
         <GlobalStyle />
         <AppWrapper>
-          <Section name="header" id="header">
+          <Section id="header">
             <HeaderHero />
           </Section>
           <MainContent>
-            <Section name="about" id="about">
+            <Section id="about">
               <About />
             </Section>
-            <Section name="skills" id="skills">
+            <Section id="skills">
               <Skills />
             </Section>
-            <Section name="works" id="works">
+            <Section id="works">
               <Works />
             </Section>
-            <Section name="contact" id="contact">
+            <Section id="contact">
               <Contact />
             </Section>
           </MainContent>
-          <FooterSection name="footer" id="footer">
+          <FooterSection id="footer">
             <Footer />
           </FooterSection>
         </AppWrapper>

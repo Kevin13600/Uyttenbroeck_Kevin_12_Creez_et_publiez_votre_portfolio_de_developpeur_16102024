@@ -46,7 +46,7 @@ L'application sera accessible à l'adresse http://localhost:5173/
 
 ## 🌐 Déploiement
 
-Ce portfolio est déployé sur Netlify. Vous pouvez le voir en ligne à l'adresse : [URL de votre portfolio]
+Ce portfolio est déployé sur Github pages. Vous pouvez le voir en ligne à l'adresse : [\[URL de votre portfolio\]](https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/)
 
 ## 🤝 Contribution
 
