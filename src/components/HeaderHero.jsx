@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import heroBackground from '../assets/hero.svg';
 import vectorImage from '../assets/Vector.svg';
 
@@ -9,10 +10,9 @@ const HeaderHeroWrapper = styled.div`
   background-image: url(${heroBackground});
   background-size: cover;
   background-position: right center;
-  width: 100%;
-  min-width: 1825px;
-  max-width: 1825px;
-  height: 125vh;
+  max-width: 1700px;
+  min-width: 1550px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -21,10 +21,10 @@ const HeaderHeroWrapper = styled.div`
 
 const VectorBackground = styled.div`
   position: absolute;
-  top: 3px;
-  left: 45px;
-  width: 300px;
-  height: 250px;
+  top: 10px;
+  left: 44px;
+  width: 280px;
+  height: 300px;
   background-image: url(${vectorImage});
   background-size: contain;
   background-repeat: no-repeat;
@@ -32,10 +32,15 @@ const VectorBackground = styled.div`
   z-index: 1;
 
   @media (max-width: 1111px) {
-  width: 200px;
-  height: 150px;
-  top : -36px;
-  left: -40px;
+    width: 200px;
+    height: 150px;
+    top: -36px;
+    left: -40px;
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 100px;
   }
 `;
 
@@ -47,22 +52,37 @@ const HeaderWrapper = styled.header`
   z-index: 2;
 
   @media (max-width: 1111px) {
-  padding: 2rem 2rem;;
+    padding: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 6rem;
-
-@media (max-width: 865px) {
   gap: 4rem;
-  } 
+
+  @media (max-width: 865px) {
+    gap: 4rem;
+  }
 
   @media (max-width: 740px) {
-  gap: 2rem;
+    gap: 2rem;
   }
-  `;
+
+  @media (max-width: 600px) {
+    display: ${props => props.$isOpen ? 'flex' : 'none'};
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+  }
+`;
 
 const NavLink = styled.a`
   color: white;
@@ -72,11 +92,13 @@ const NavLink = styled.a`
   &:hover {
     color: #FF4A57;
   }
-@media (max-width: 1000px) {
+
+  @media (max-width: 1000px) {
     font-size: 1.2rem;
   }
-@media (max-width: 740px) {
-  font-size: 1rem;
+
+  @media (max-width: 740px) {
+    font-size: 1rem;
   }
 `;
 
@@ -93,17 +115,30 @@ const HeroContent = styled.div`
   justify-content: center;
   padding-left: 5rem;
   padding-bottom: 20rem;
+
+  @media (max-width: 768px) {
+    padding-left: 2rem;
+    padding-bottom: 10rem;
+  }
 `;
 
 const HeroTitle = styled.h1`
   color: white;
   font-size: 3.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const HeroSubtitle = styled.p`
   color: white;
   font-size: 1.5rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -119,18 +154,38 @@ const SocialIcon = styled.a`
   }
 `;
 
+const MenuIcon = styled.div`
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+`;
+
 const HeaderHero = () => {
-    return (
-      <HeaderHeroWrapper>
-        <VectorBackground />
-        <HeaderWrapper>
-          <Nav>
-            <HomeLink>Accueil</HomeLink>  
-            <NavLink href="#about">À propos</NavLink>
-            <NavLink href="#skills">Compétences</NavLink>
-            <NavLink href="#works">Projets</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
-          </Nav>
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const handleNavLinkClick = () => {
+    setIsNavOpen(false);
+  };
+
+  return (
+    <HeaderHeroWrapper>
+      <VectorBackground />
+      <HeaderWrapper>
+        <MenuIcon onClick={() => setIsNavOpen(!isNavOpen)} aria-label="Toggle menu">
+          <FontAwesomeIcon icon={faBars} />
+        </MenuIcon>
+        <Nav $isOpen={isNavOpen}>
+          <HomeLink onClick={handleNavLinkClick}>Accueil</HomeLink>  
+          <NavLink href="#about" onClick={handleNavLinkClick}>À propos</NavLink>
+          <NavLink href="#skills" onClick={handleNavLinkClick}>Compétences</NavLink>
+          <NavLink href="#works" onClick={handleNavLinkClick}>Projets</NavLink>
+          <NavLink href="#contact" onClick={handleNavLinkClick}>Contact</NavLink>
+        </Nav>
       </HeaderWrapper>
       <HeroContent>
         <HeroTitle>Kevin</HeroTitle>

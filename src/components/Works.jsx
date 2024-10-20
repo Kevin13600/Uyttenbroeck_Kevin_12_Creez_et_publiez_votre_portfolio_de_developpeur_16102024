@@ -35,7 +35,7 @@ const BackgroundSvg = styled.div`
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 45%;
+  width: 20%;
   height: 100%;
   background-image: url(${worksSvg});
   background-repeat: no-repeat;
@@ -44,28 +44,20 @@ const BackgroundSvg = styled.div`
   z-index: 1;
 
   @media (max-width: 1024px) {
-    width: 30%;
+    width: 60%;
   }
 
   @media (max-width: 768px) {
-    width: 40%;
-  }
-
-  @media (max-width: 576px) {
-    width: 50%;
+    width: 80%;
   }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
-  padding: 0 20px;
   position: relative;
   z-index: 2;
-
-  @media (max-width: 1240px) {
-    max-width: 90%;
-  }
 `;
 
 const Title = styled.h2`
@@ -83,21 +75,11 @@ const Title = styled.h2`
 const CarouselWrapper = styled.div`
   .slick-dots {
     bottom: -40px;
-    @media (max-width: 768px) {
-      bottom: -30px;
-    }
     li {
       width: 50px;
       height: 5px;
       margin: 0 5px;
-      @media (max-width: 768px) {
-        width: 30px;
-        margin: 0 3px;
-      }
       button {
-        width: 100%;
-        height: 100%;
-        padding: 0;
         &:before {
           content: '';
           width: 100%;
@@ -112,20 +94,31 @@ const CarouselWrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .slick-dots {
+      bottom: -30px;
+      li {
+        width: 30px;
+        margin: 0 3px;
+      }
+    }
+  }
 `;
 
 const ProjectCard = styled.div`
   display: flex;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   height: 400px;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
   }
 
   @media (max-width: 992px) {
@@ -163,19 +156,20 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #333;
   margin-bottom: 10px;
 
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #666;
   margin-bottom: 15px;
+  line-height: 1.6;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
@@ -198,10 +192,16 @@ const TechTag = styled.span`
   color: #333;
   padding: 5px 10px;
   border-radius: 15px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #FF4A57;
+    color: white;
+  }
 
   @media (max-width: 576px) {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 3px 8px;
   }
 `;
@@ -209,10 +209,11 @@ const TechTag = styled.span`
 const GithubLink = styled.a`
   color: #333;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
   
   &:hover {
     color: #FF4A57;
