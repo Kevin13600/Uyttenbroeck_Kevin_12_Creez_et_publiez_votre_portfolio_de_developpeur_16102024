@@ -19,7 +19,6 @@ Ce portfolio présente mes compétences en développement web et mes projets ré
 
 - React.js
 - Styled Components pour le styling
-- React Scroll pour la navigation fluide
 - React Slick pour le carrousel de projets
 - Font Awesome pour les icônes
 

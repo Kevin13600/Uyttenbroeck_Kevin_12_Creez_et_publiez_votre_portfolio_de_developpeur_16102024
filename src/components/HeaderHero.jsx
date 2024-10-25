@@ -10,8 +10,7 @@ const HeaderHeroWrapper = styled.div`
   background-image: url(${heroBackground});
   background-size: cover;
   background-position: right center;
-  max-width: 1700px;
-  min-width: 1550px;
+  width: 1700px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,22 +20,15 @@ const HeaderHeroWrapper = styled.div`
 
 const VectorBackground = styled.div`
   position: absolute;
-  top: 10px;
-  left: 44px;
-  width: 280px;
-  height: 300px;
+  width: 200px;
+  height: 150px;
+  top: -36px;
+  left: -40px;
   background-image: url(${vectorImage});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
   z-index: 1;
-
-  @media (max-width: 1111px) {
-    width: 200px;
-    height: 150px;
-    top: -36px;
-    left: -40px;
-  }
 
   @media (max-width: 768px) {
     width: 150px;

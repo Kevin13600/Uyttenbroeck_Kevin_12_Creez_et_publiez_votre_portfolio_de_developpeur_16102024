@@ -27,8 +27,7 @@ const BackgroundImage = styled.div`
   background-repeat: no-repeat;
   transform: rotate(22deg);
   z-index: 1;
-  max-width: 1700px;
-  min-width: 1100px;  
+  width: 1700px; 
   height: 125vh; 
   overflow: hidden; 
 `;
@@ -218,8 +217,7 @@ const About = () => {
         <TextContainer>
           <Title>À propos de moi</Title>
           <Description>
-            Étudiant en fin de parcours chez OpenClassRooms, je cherche à mettre à profit mes compétences en
-            développement en mettant l'accent sur la collaboration, la communication et l'accomplissement.
+          Développeur engagé, formé par OpenClassrooms, je suis prêt à mobiliser mes compétences en développement pour contribuer pleinement à des projets d'équipe, alliant communication efficace et rigueur dans l'exécution.
           </Description>
           <DownloadButton href="#" download>
             Télécharger CV

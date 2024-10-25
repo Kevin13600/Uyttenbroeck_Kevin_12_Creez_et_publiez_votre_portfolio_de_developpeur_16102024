@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faSass } from '@fortawesome/free-brands-svg-icons';
 import skillsImage from '../assets/skills-image.webp';
 import skillsSvg from '../assets/skills.svg';
 
@@ -44,10 +44,10 @@ const Container = styled.div`
 const ContentWrapper = styled.div`
   flex: 1;
   max-width: 50%;
+  text-align: center;
 
   @media (max-width: 992px) {
     max-width: 100%;
-    text-align: center;
   }
 `;
 
@@ -75,12 +75,8 @@ const Description = styled.p`
 
 const SkillsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
@@ -98,7 +94,7 @@ const SkillIcon = styled(FontAwesomeIcon)`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 
   @media (max-width: 768px) {
@@ -165,6 +161,7 @@ const skills = [
   { name: 'JavaScript', icon: faJs },
   { name: 'React', icon: faReact },
   { name: 'Node.js', icon: faNodeJs },
+  { name: 'Sass', icon: faSass },
 ];
 
 const Skills = () => (
