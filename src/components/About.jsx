@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import aboutBackground from '../assets/About.svg';
 import aboutProfil from '../assets/About.webp';
+import cvPDF from '../assets/CV.pdf';
 
 
 const AboutSection = styled.section`
@@ -65,11 +66,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div.attrs(props => ({
-  style: {
-    transform: props.$isSmallScreen ? props.$transform : 'rotate(-5deg)',
-  },
-}))`
+const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 320px;
@@ -79,8 +76,12 @@ const ImageWrapper = styled.div.attrs(props => ({
   box-shadow: 0 0 0 10px #e0e0e0, 0 0 0 11px #d0d0d0;
   transition: transform 0.3s ease;
   margin: 0 auto;
+  transform: ${props => props.$isSmallScreen 
+    ? props.$transformValue 
+    : 'rotate(-5deg)'
+  };
   
-  @media (min-width: 769px) {
+  @media (min-width: 769px) {  
     &:hover {
       transform: rotate(-25deg);
     }
@@ -110,7 +111,7 @@ const TextContainer = styled.div`
   flex: 1;
   color: white;
   position: relative;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(70px);
   padding: 20px;
   border-radius: 10px;
 
@@ -175,13 +176,16 @@ const ScrollIndicator = styled.div`
 `;
 
 const About = () => {
-  const [transform, setTransform] = useState('rotateY(0deg)');
+  const [transformValue, setTransformValue] = useState('rotate(-5deg)');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const imageRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setTransformValue('rotate(-5deg)');
+      }
     };
 
     const handleScroll = () => {
@@ -191,7 +195,7 @@ const About = () => {
         const windowHeight = window.innerHeight;
         
         const pivotAmount = ((scrollPosition + windowHeight / 2 - imagePosition) / windowHeight) * 45;
-        setTransform(`rotateY(${pivotAmount}deg)`);
+        setTransformValue(`rotateY(${pivotAmount}deg)`);
       }
     };
 
@@ -210,16 +214,25 @@ const About = () => {
       <BackgroundImage />
       <ContentWrapper>
         <ImageContainer>
-          <ImageWrapper $isSmallScreen={isSmallScreen} $transform={transform} ref={imageRef}>
+          <ImageWrapper 
+            $isSmallScreen={isSmallScreen} 
+            $transformValue={transformValue} 
+            ref={imageRef}
+          >
             <ProfileImage src={aboutProfil} alt="Profil" />
           </ImageWrapper>
         </ImageContainer>
         <TextContainer>
           <Title>À propos de moi</Title>
           <Description>
-          Développeur engagé, formé par OpenClassrooms, je suis prêt à mobiliser mes compétences en développement pour contribuer pleinement à des projets d'équipe, alliant communication efficace et rigueur dans l'exécution.
+            Développeur engagé, formé par OpenClassrooms, je suis prêt à mobiliser mes compétences en développement pour contribuer pleinement à des projets d'équipe, alliant communication efficace et rigueur dans l'exécution.
           </Description>
-          <DownloadButton href="#" download>
+          <DownloadButton 
+            href={cvPDF}
+            download="CV_Kevin_Uyttenbroeck.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Télécharger CV
           </DownloadButton>
         </TextContainer>

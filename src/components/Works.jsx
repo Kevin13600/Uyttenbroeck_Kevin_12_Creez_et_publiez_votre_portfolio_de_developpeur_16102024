@@ -112,12 +112,15 @@ const ProjectCard = styled.div`
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.06),
+    0 3px 6px rgba(0, 0, 0, 0.08);
   height: 400px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    0 10px 20px rgba(0, 0, 0, 0.08),
+    0 6px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
   }
 
