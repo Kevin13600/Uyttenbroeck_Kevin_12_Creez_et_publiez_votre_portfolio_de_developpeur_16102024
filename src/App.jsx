@@ -70,7 +70,7 @@ const App = () => {
           <meta property="og:url" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/" />
           <meta property="og:title" content="Uyttenbroeck Kevin - Portfolio Développeur Front-end" />
           <meta property="og:description" content="Découvrez mes projets et réalisations en développement web front-end." />
-          <meta property="og:image" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.PNG" />
+          <meta property="og:image" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.jpg" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
@@ -81,7 +81,7 @@ const App = () => {
           <meta property="twitter:url" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/" />
           <meta property="twitter:title" content="Uyttenbroeck Kevin - Portfolio Développeur Front-end" />
           <meta property="twitter:description" content="Découvrez mes projets et réalisations en développement web front-end." />
-          <meta property="twitter:image" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.PNG" />
+          <meta property="twitter:image" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.jpg" />
 
           {/* Autres meta tags importants */}
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -108,7 +108,7 @@ const App = () => {
                 "jobTitle": "Développeur Front-end",
                 "description": "Développeur web spécialisé en React et technologies front-end modernes",
                 "skills": ["React", "JavaScript", "HTML5", "CSS3", "Sass", "Node.js", "MongoDB"],
-                "image": "https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.PNG",
+                "image": "https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.jpg",
                 "sameAs": [
                   "https://www.linkedin.com/in/kevin-uyttenbroeck-640934107/",
                   "https://github.com/Kevin13600"
