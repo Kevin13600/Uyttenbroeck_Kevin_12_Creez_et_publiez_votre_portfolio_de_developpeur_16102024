@@ -71,10 +71,12 @@ const App = () => {
           <meta property="og:title" content="Uyttenbroeck Kevin - Portfolio Développeur Front-end" />
           <meta property="og:description" content="Découvrez mes projets et réalisations en développement web front-end." />
           <meta property="og:image" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.jpg" />
+          <meta property="og:image:secure_url" content="https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/assets/OG.jpg" />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:image:alt" content="Portfolio Kevin Uyttenbroeck" />
+
 
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
