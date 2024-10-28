@@ -56,16 +56,16 @@ const Footer = () => {
     <FooterWrapper>
       <FooterContent>
         <SocialIcons>
-          <SocialIcon href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://x.com/LUkuleliste" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
-          <SocialIcon href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://github.com/Kevin13600" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </SocialIcon>
-          <SocialIcon href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://www.linkedin.com/in/kevin-uyttenbroeck-640934107/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </SocialIcon>
-          <SocialIcon href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://www.instagram.com/kevinuytten/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} />
           </SocialIcon>
         </SocialIcons>

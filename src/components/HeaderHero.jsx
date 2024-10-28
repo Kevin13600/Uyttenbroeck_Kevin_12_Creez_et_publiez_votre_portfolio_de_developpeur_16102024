@@ -183,7 +183,7 @@ const HeaderHero = () => {
         <HeroTitle>Kevin</HeroTitle>
         <HeroSubtitle>Développeur Intégrateur Web</HeroSubtitle>
         <SocialIcons>
-          <SocialIcon href="https://github.com/Kevin13600" aria-label="Twitter">
+          <SocialIcon href="https://x.com/LUkuleliste" aria-label="Twitter">
             <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
           <SocialIcon href="https://github.com/Kevin13600" aria-label="GitHub">
