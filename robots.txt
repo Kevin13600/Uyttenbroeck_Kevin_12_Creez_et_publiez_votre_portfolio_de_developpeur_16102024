@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://kevin13600.github.io/sitemap.xml
+Sitemap: https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/sitemap.xml
