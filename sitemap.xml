@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page principale -->
   <url>
     <loc>https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/</loc>
-    <lastmod>2024-01-28</lastmod>
+    <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <!-- Section À propos -->
+  <url>
+    <loc>https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/#about</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section Compétences -->
+  <url>
+    <loc>https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/#skills</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section Projets -->
+  <url>
+    <loc>https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/#works</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Section Contact -->
+  <url>
+    <loc>https://kevin13600.github.io/Uyttenbroeck_Kevin_12_Creez_et_publiez_votre_portfolio_de_developpeur_16102024/#contact</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
